@@ -30,8 +30,7 @@ a {
         "nav"
         "aside"
         "main"
-        "footer"
-        ;
+        "footer";
 }
 
 .main-menu {
@@ -200,24 +199,17 @@ footer .copyright {
     #root {
         grid-template-columns: 1fr 5fr;
         grid-template-areas: 
-        "nav main"
-        "aside main"
-        "footer main"
-        ;
+        "nav nav"
+        "aside aside"
+        "main main"
+        "footer footer";
     }
-    .main-menu {
-        flex-direction: column;
-        height: 200px;
-    }
+
     .main-menu .desktop_menu {
         display: block;
         justify-content: space-around;
         align-items: center;
-    }
-
-    .widget{
-        background-color: #000;
-        color: white;
+        flex-direction: row;
     }
 
     aside .widget ul {
@@ -243,6 +235,23 @@ footer .copyright {
 
 
 @media (min-width: 992px) {
+    #root {
+        grid-template-areas: 
+        "nav main"
+        "aside main"
+        "footer main";
+    }
+    
+
+    .main-menu {
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .widget{
+        background-color: #000;
+        color: white;
+    }
 
     .post-gallery {
         grid-template-columns: repeat(4, 1fr);
