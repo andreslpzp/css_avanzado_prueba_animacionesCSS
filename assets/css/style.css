@@ -40,6 +40,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    width: auto;
     grid-area: nav;
 }
 
@@ -141,7 +142,7 @@ aside .widget li {
 .products .card .order_now { 
     color: black;
     border: none;
-    padding: 1rem 6rem 1rem 6rem;
+    padding: 1rem 3rem 1rem 3rem;
     border-radius: 3%;
     font-weight: 600;
 }
@@ -197,7 +198,6 @@ footer .copyright {
 
 @media (min-width: 576px) {
     #root {
-        display: grid;
         grid-template-columns: 1fr 5fr;
         grid-template-areas: 
         "nav main"
@@ -207,7 +207,7 @@ footer .copyright {
     }
     .main-menu {
         flex-direction: column;
-        height: 50vh;
+        height: 200px;
     }
     .main-menu .desktop_menu {
         display: block;
@@ -218,8 +218,8 @@ footer .copyright {
     .widget{
         background-color: #000;
         color: white;
-
     }
+
     aside .widget ul {
         list-style: none;
         padding: 1rem;
