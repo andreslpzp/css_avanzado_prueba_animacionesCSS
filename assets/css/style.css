@@ -133,7 +133,7 @@ aside .widget li {
 
 .products .card img {
     width: 100%;
-    height: auto;
+    height: 220px;
     object-fit: cover;
     text-align: center;
 }
@@ -227,6 +227,9 @@ footer .copyright {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1rem;
     }
+    .products .card img {
+        height: 100px;
+    }
     .mobile_menu {
         display: none;
     }
@@ -238,12 +241,15 @@ footer .copyright {
 
 @media (min-width: 992px) {
     #root {
-        grid-template-rows: 1fr 1fr 2fr;
         grid-template-areas: 
         "nav main"
         "aside main"
         "footer main";
     }
+    main{
+        grid-area: main;
+    }
+
     .main-menu{
         display: flex;
         flex-direction: column;
@@ -257,22 +263,24 @@ footer .copyright {
     .main-menu .desktop_menu {
         display: flex;
         flex-direction: column;
-
         align-items: center;
     }
-
     aside{
-        height: 400px;
+        background-color: var(--bg);
+        height: 40vh;
+        border: none;
     }
 
     .widget{
-        background-color: #000;
         color: white;
-        height: 100%;
+    }
+
+    .widget ul{
+        color: white;
     }
 
     footer{
-        height: 200px;
+        height: 30vh;
     }
 
     .post-gallery {
