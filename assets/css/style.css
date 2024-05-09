@@ -203,11 +203,15 @@ footer .copyright {
         "aside main"
         "footer footer";
     }
+    
+    .mobile_menu {
+        display: none;
+    }
 
     .main-menu .desktop_menu {
         display: flex;
         justify-content: space-around;
-        align-items: cent er;
+        align-items: center;
     }
 
     .main-menu .desktop_menu ul{
@@ -230,14 +234,11 @@ footer .copyright {
     .products .card img {
         height: 100px;
     }
-    .mobile_menu {
-        display: none;
-    }
+    
     .footer{
         height: 20vh;
     }
     }
-
 
 @media (min-width: 992px) {
     #root {
@@ -254,6 +255,7 @@ footer .copyright {
         display: flex;
         flex-direction: column;
         height: 30vh;
+        align-items: center;
     }
 
     .main-menu .logo{
@@ -269,14 +271,15 @@ footer .copyright {
         background-color: var(--bg);
         height: 40vh;
         border: none;
+        color: var(--white);
+    }
+
+    aside .widget a {
+        color: var(--white);
     }
 
     .widget{
-        color: white;
-    }
-
-    .widget ul{
-        color: white;
+        padding: 2rem;
     }
 
     footer{
