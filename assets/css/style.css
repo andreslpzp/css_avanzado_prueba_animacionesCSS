@@ -314,6 +314,10 @@ footer .copyright {
         padding: 0;
     }
     
+    .logo img{
+        width: 150px;
+    }
+
     .menu-toggler {
         display: none;
     }
