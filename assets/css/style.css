@@ -222,7 +222,7 @@ aside .widget li {
 }
 
 .assistance .card img{
-    width: 100%;
+    width: 80%;
     height: 500px;
     object-fit: cover;
     text-align: center;
@@ -354,7 +354,10 @@ footer .copyright {
     }
     .products .card img {
         height: 180px;
+    }
 
+    .assistance .card img{
+        width: 90%;
     }
     
     .footer{
