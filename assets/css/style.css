@@ -40,7 +40,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     width: auto;
     grid-area: nav;
 }
@@ -51,14 +51,21 @@ a {
     align-items: center;
 }
 .logo img{
-    width: 150px;
+    width: 80px;
 }
 .menu-toggler:hover{
     color:var(--yellow);
 }
 
 .desktop_menu{
-    display: none;
+    display: flex;
+    font-size: small;
+    justify-content: center;
+}
+
+.desktop_menu li{
+    padding: 0.3rem;
+    list-style: none;
 }
 
 .nav ul{
@@ -84,11 +91,6 @@ a {
     border:none;
     color: #d4d9df;
     font-size: 1.25rem;
-}
-
-.open {
-    /* Styles for the open state of the menu */
-    overflow: hidden; /* Prevent scrolling of the main content when menu is open */
 }
 
 aside {
@@ -320,6 +322,7 @@ footer .copyright {
         display: flex;
         width: 400px;
         height: 20px;
+        font-size: medium;
     }
 
     .main-menu .desktop_menu ul{
