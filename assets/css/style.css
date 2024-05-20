@@ -6,6 +6,7 @@
     --border: #ccc;
     --text: #000;
     --white: #fff;
+    --yellow:#bea268;
     --font: "Open Sans", sans-serif;
 }
 
@@ -44,21 +45,24 @@ a {
     grid-area: nav;
 }
 
-.main-menu ul {
-    list-style: none;
+.logo{
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: fixed;
-    top: 60px;
-    right: 0;
-    background: var(--bg);
-    width: 80%;
-    max-width: 400px;
-    padding: 3rem;
-    height:calc(100vh-65px);
-    transform: translateX(100%);
-    transition: transform 0.2 ease;
+    justify-content: flex-start;
+    align-items: center;
+}
+.logo img{
+    width: 150px;
+}
+.menu-toggler:hover{
+    color:var(--yellow);
+}
+
+.desktop_menu{
+    display: none;
+}
+
+.nav ul{
+    background-color: var(--bg);
 }
 
 .main-menu .logo {
@@ -72,19 +76,19 @@ a {
 }
 
 .main-menu a:hover {
-    color: var(--primary);
+    color: var(--yellow);
 }
 
 .menu-toggler{
-    color:white;
     background: none;
     border:none;
-    background-color: #000;
-    font-size: 1.5rem;
+    color: #d4d9df;
+    font-size: 1.25rem;
 }
 
-.open .main-menu ul{
-    transform: translateX(0);
+.open {
+    /* Styles for the open state of the menu */
+    overflow: hidden; /* Prevent scrolling of the main content when menu is open */
 }
 
 aside {
@@ -182,6 +186,10 @@ aside .widget li {
     font-weight: 600;
 }
 
+.products .card .order_now:hover {
+    background-color: var(--yellow);
+}
+
 .assistance h3 {
     margin-bottom: 1rem;
     text-align: center;
@@ -190,7 +198,7 @@ aside .widget li {
 
 .assistance {
     display: grid;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     grid-template-columns: 1fr;
     opacity: 0.9;
     transform: translateY(20px);
@@ -200,6 +208,15 @@ aside .widget li {
 .assistance .card {
     margin-top: 5rem;
     text-align: center;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.assistance .card:hover {
+    transform: scale(1.05);
+    opacity: 1.1
 }
 
 .assistance .card img{
@@ -222,6 +239,10 @@ aside .widget li {
     padding: 1rem 3rem 1rem 3rem;
     border-radius: 3%;
     font-weight: 600;
+}
+
+.assistance .card button:hover{
+    background-color:var(--yellow);
 }
 
 footer {
@@ -261,7 +282,7 @@ footer ul a {
 }
 
 footer ul a:hover {
-    text-decoration: underline;
+    color: var(--yellow);
 }
 
 footer .copyright {
@@ -282,14 +303,13 @@ footer .copyright {
         "aside article"
         "footer footer";
     }
+
     .main-menu ul{
         position: relative;
         width: auto;
         max-width: none;
         height: auto;
         padding: 0;
-        flex-direction: row;
-        top:0;
     }
     
     .menu-toggler {
@@ -298,12 +318,17 @@ footer .copyright {
 
     .main-menu .desktop_menu {
         display: flex;
-        justify-content: center;
+        width: 400px;
+        height: 20px;
     }
 
     .main-menu .desktop_menu ul{
         flex-direction: column;
         align-items: center;
+    }
+
+    .main-menu .desktop_menu li{
+        margin: 10px;
     }
 
     aside .widget ul {
@@ -312,15 +337,17 @@ footer .copyright {
         text-align: center;
     }
     aside .widget li {
-        display: inline-block;
-        margin: 10px;
+        display: flex;
+        justify-content: center;
+        margin: 20px;
     }
     .post-gallery {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1rem;
     }
     .products .card img {
-        height: 100px;
+        height: 180px;
+
     }
     
     .footer{
@@ -336,7 +363,7 @@ footer .copyright {
         "aside article"
         "footer article";
     }
-    
+
     main{
         grid-area: main;
     }
@@ -344,7 +371,9 @@ footer .copyright {
     .main-menu{
         display: flex;
         flex-direction: column;
-        height: 30vh;
+        height: 40vh;
+        width: 300px;
+        background-color:var(--bg);
     }
 
     .main-menu .logo{
@@ -355,12 +384,20 @@ footer .copyright {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
+
+    .main-menu .desktop_menu li{
+        font-weight: 700;
+        font-size:large;
+    }
+
     aside{
-        background-color: var(--bg);
-        height: 40vh;
+        background:var(--bg);
+        width: 300px;
         border: none;
         color: var(--white);
+        padding-top: 6rem;
     }
 
     aside .widget a {
@@ -368,15 +405,20 @@ footer .copyright {
     }
 
     .widget{
-        padding: 2rem;
+        padding: 0.5rem;
     }
 
     footer{
         height: 30vh;
+        width: 300px;
+    }
+
+    footer li{
+        text-align: center;
     }
 
     .post-gallery {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .products {
